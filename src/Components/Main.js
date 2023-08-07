@@ -157,33 +157,35 @@ const Main = () => {
     let finalCalculation = amount * multiplier
 
     const renderedOptions = currencyArray.map((obj) => {
-        return <option value={obj.value} key={obj.id}>{obj.name}</option>
+        return <option value={obj.value} key={obj.id}>
+            {obj.name}
+        </option>
     });
 
     return (
-        <div className='main'>
-            <div className="inner-main">
-                <div className="box">
+        <div>
+            <div>
+                <div>
                     <h4>Amount</h4>
-                    <div className="input-box">
+                    <div>
                         <span>{symbol}</span>
                         <input value={amount} placeholder='Enter Amount...' onChange={handleChangeAmount} />
                     </div>
                 </div>
-                <div className="box">
+                <div>
                     <h4>From</h4>
-                    <select name="inputType" id="inputType" value={input} onChange={handleChangeInput}>
+                    <select name="input" value={input} onChange={handleChangeInput}>
                         {renderedOptions}
                     </select>
                 </div>
 
-                <div className="interchange">
+                <div>
                     <img onClick={exchangeValue} src={exchange} alt="" />
                 </div>
 
-                <div className="box">
+                <div>
                     <h4>To</h4>
-                    <select name="outputType" id="outputType" value={result} onChange={handleChangeResult}>
+                    <select name="result" value={result} onChange={handleChangeResult}>
                         {renderedOptions}
                     </select>
                 </div>
